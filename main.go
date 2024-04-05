@@ -1,34 +1,33 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"os"
+	"os/exec"
+	"syscall"
 )
 
+func run() {
+	cmd := exec.Command("/bin/sh")
+	cmd.SysProcAttr = &syscall.SysProcAttr{
+		Cloneflags: syscall.CLONE_NEWUTS | syscall.CLONE_NEWPID | syscall.CLONE_NEWNS,
+	}
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
+	if err := cmd.Run(); err != nil {
+		fmt.Println("ERROR", err)
+		os.Exit(1)
+	}
+}
+
 func main() {
-	createCmd := flag.NewFlagSet("create", flag.ExitOnError)
-	runCmd := flag.NewFlagSet("run", flag.ExitOnError)
-
 	switch os.Args[1] {
-	case "create":
-		if err := createCmd.Parse(os.Args[2:]); err != nil {
-			fmt.Fprintf(os.Stderr, "Error parsing 'create' command: %s\n", err)
-			os.Exit(1)
-		}
-		// TODO: Implement logic for creating a container
-		fmt.Println("Creating a new container...")
-
 	case "run":
-		if err := runCmd.Parse(os.Args[2:]); err != nil {
-			fmt.Fprintf(os.Stderr, "Error parsing 'run' command: %s\n", err)
-			os.Exit(1)
-		}
-		// TODO: Implement logic for running a container
-		fmt.Println("Running a container...")
-
+		run()
 	default:
-		fmt.Fprintf(os.Stderr, "Unsupported command '%s'\n", os.Args[1])
+		fmt.Println("unknown command")
 		os.Exit(1)
 	}
 }
