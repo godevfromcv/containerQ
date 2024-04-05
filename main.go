@@ -8,7 +8,7 @@ import (
 )
 
 func run() {
-	cmd := exec.Command("/bin/sh")
+	cmd := exec.Command("sudo /bin/sh")
 	cmd.SysProcAttr = &syscall.SysProcAttr{
 		Cloneflags: syscall.CLONE_NEWUTS | syscall.CLONE_NEWPID | syscall.CLONE_NEWNS,
 	}
