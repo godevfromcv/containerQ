@@ -1,0 +1,115 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
+.glide/
+
+# Project-local vendor directory used by go mod vendor
+/vendor/
+
+# Dependency directories (remove the comment below to include it)
+# /vendor/
+
+# History of executed commands in GoLand
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/usage.statistics.xml
+/.idea/dictionaries
+/.idea/shelf
+
+# User-specific stuff: .idea works directory
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Generated files by JetBrains IDEs, specifically GoLand
+.idea/
+
+# Sensitive or high-churn files
+.env
+.env.local
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Executable files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Compiled Object files
+*.o
+*.obj
+*.ko
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executable and Linkable Format (ELF)
+*.elf
+
+# Directory-based project format
+*.directory
+
+# Windows Installer package
+*.msi
+
+# Compiled Java class file
+*.class
+
+# Compiled Python bytecode
+*.pyc
+*.pyo
+*.pyd
+
+# Windows thumbnail cache
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+# Operating System Files for OSX, Windows, and Linux
+# Including .DS_Store for OSX, Thumbs.db for Windows, and *~ for temporary files on Linux
